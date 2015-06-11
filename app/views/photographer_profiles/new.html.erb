@@ -1,0 +1,111 @@
+<!-- Validation failure messages -->
+
+<% if @photographer_profile.errors.any? %>
+  <% @photographer_profile.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<!-- Responsive panel example -->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add Photographer Profile</h3>
+      </div>
+      <div class="panel-body">
+        <form action="/create_photographer_profile" method="post" class="form-horizontal">
+          <!-- Hidden input for authenticity token to protect from forgery -->
+          <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+
+          <!-- Label and input for last_name -->
+          <div class="form-group">
+            <label for="last_name" class="col-sm-2 control-label">
+              Last name
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="last_name" name="last_name" placeholder="Last name" class="form-control" value="<%= @photographer_profile.last_name %>">
+            </div>
+          </div>
+
+          <!-- Label and input for first_name -->
+          <div class="form-group">
+            <label for="first_name" class="col-sm-2 control-label">
+              First name
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="first_name" name="first_name" placeholder="First name" class="form-control" value="<%= @photographer_profile.first_name %>">
+            </div>
+          </div>
+
+          <!-- Label and input for bio -->
+          <div class="form-group">
+            <label for="bio" class="col-sm-2 control-label">
+              Bio
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="bio" name="bio" placeholder="Bio" class="form-control" value="<%= @photographer_profile.bio %>">
+            </div>
+          </div>
+
+          <!-- Label and input for style_specialties -->
+          <div class="form-group">
+            <label for="style_specialties" class="col-sm-2 control-label">
+              Style specialties
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="style_specialties" name="style_specialties" placeholder="Style Specialties" class="form-control" value="<%= @photographer_profile.style_specialties %>">
+            </div>
+          </div>
+
+          <!-- Label and input for age -->
+          <div class="form-group">
+            <label for="age" class="col-sm-2 control-label">
+              Age
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="age" name="age" placeholder="Age" class="form-control" value="<%= @photographer_profile.age %>">
+            </div>
+          </div>
+
+          <!-- Label and input for Location -->
+          <div class="form-group">
+            <label for="first_name" class="col-sm-2 control-label">
+              Location
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="photographer_location" name="photographer_location" placeholder="Photographer Location" class="form-control" value="<%= @photographer_profile.photographer_location %>">
+            </div>
+          </div>
+
+          <!-- Label and input for Phone Number -->
+          <div class="form-group">
+            <label for="first_name" class="col-sm-2 control-label">
+              Phone Number
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="photographer_phone" name="photographer_phone" placeholder="Photographer Phone" class="form-control" value="<%= @photographer_profile.photographer_phone %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button class="btn btn-success">
+                Create Photographer Profile
+              </button>
+              or
+              <a href="/photographer_profiles">Cancel</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->

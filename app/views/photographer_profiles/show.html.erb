@@ -1,0 +1,55 @@
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+         <h3 class="panel-title"><%= @photographer_profile.last_name %>, <%= @photographer_profile.first_name %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+
+              <dt>Last name</dt>
+              <dd><%= @photographer_profile.last_name %></dd>
+
+              <dt>First name</dt>
+              <dd><%= @photographer_profile.first_name %></dd>
+
+
+              <dt>Bio</dt>
+              <dd><%= @photographer_profile.bio %></dd>
+
+              <dt>Style specialties</dt>
+              <dd><%= @photographer_profile.style_specialties %></dd>
+
+              <dt>Age</dt>
+              <dd><%= @photographer_profile.age %></dd>
+
+              <dt>Location</dt>
+              <dd><%= @photographer_profile.photographer_location %></dd>
+
+              <dt>Phone Number</dt>
+              <dd><%= @photographer_profile.photographer_phone %></dd>
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <a href="/photographer_profiles" class="btn btn-primary">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+
+              <a href="/photographer_profiles/<%= @photographer_profile.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+
+
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->

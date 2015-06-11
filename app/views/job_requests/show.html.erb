@@ -1,0 +1,53 @@
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Job Request #<%= @job_request.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+               <dt>User Last Name</dt>
+          <dd><%= @job_request.user_last_name %></dd>
+
+          <dt>User First Name</dt>
+          <dd><%= @job_request.user_first_name %></dd>
+
+          <dt>Photographer Last Name</dt>
+          <dd><%= @job_request.description %></dd>
+
+          <dt>Location</dt>
+          <dd><%= @job_request.location %></dd>
+
+          <dt>Date</dt>
+          <dd><%= @job_request.date %></dd>
+
+          <dt>User Email Address</dt>
+          <dd><%= @job_request.user_email %></dd>
+
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <a href="/job_requests" class="btn btn-primary">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+
+              <a href="/job_requests/<%= @job_request.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+
+              <a href="/delete_job_request/<%= @job_request.id %>" class="btn btn-danger" rel="nofollow">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->
